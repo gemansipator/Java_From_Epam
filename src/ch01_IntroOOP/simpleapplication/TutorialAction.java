@@ -1,4 +1,4 @@
-package ch01_IntroOOP.simpleApplication;
+package ch01_IntroOOP.simpleapplication;
 
 public class TutorialAction {
     void printMessage(String msg) { // method definition

@@ -1,4 +1,4 @@
-package ch01_IntroOOP.simpleApplication;
+package ch01_IntroOOP.simpleapplication;
 
 public class FirstProgram {
     public static void main(String[] args) {

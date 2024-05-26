@@ -1,4 +1,4 @@
-package ch01_IntroOOP.consoleInputOutput;
+package ch01_IntroOOP.consoleinputoutput;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package ch01_IntroOOP.objectReferences;
+package ch01_IntroOOP.objectreferences;
 
 public class ComparisonString {
     public static void main(String[ ] args) {
