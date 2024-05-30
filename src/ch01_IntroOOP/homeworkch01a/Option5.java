@@ -6,11 +6,19 @@ package ch01_IntroOOP.homeworkch01a;
 public class Option5 {
     public static void main(String[] args) {
         int sum = 0;
+        int result = 1;
+
+
         for (String arg : args) {
 
             sum = (sum + Integer.parseInt(arg));
+            result = (result * Integer.parseInt(arg));
+
+
         }
-        System.out.println("Сумма всех чисел введенных в качестве аргументов: "+ sum);
+
+        System.out.println("СУММА всех чисел введенных в качестве аргументов: "+ sum);
+        System.out.println("ПРОИЗВЕДЕНИЕ всех чисел введенных в качестве аргументов: "+ result);
 
     }
 
