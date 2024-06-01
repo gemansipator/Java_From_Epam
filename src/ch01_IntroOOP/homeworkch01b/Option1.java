@@ -19,7 +19,9 @@ public class Option1 {
             sourceNumbers[i] = scanner.nextInt();       //ЗАПОЛНЯЕМ МАССИВ ЗНАЧЕНИЯМИ
         }
         System.out.println("Ваш массив: " + Arrays.toString(sourceNumbers));
+        System.out.println("\n");
 
+        //ВЫВЕСТИ ЧЁТНЫЕ И НЕЧЁТНЫЕ ЧИСЛА:
 
         //x % 2 - вычисляет остаток от деления x на 2.
         int counter;
@@ -44,6 +46,31 @@ public class Option1 {
                 System.out.print(" "+oddNumbers);
             }
         }
+        System.out.println("\n");
+
+        // Наибольшее и наименьшее число
+
+        int max = sourceNumbers[0]; // начальное значение МАКСИМАЛЬНОГО элемента
+        System.out.println("НАИБОЛЬШЕЕ число: ");
+        for (counter = 0; counter < sourceNumbers.length; counter++){
+            int sourceX = sourceNumbers[counter];
+            if(max < sourceX){
+                max = sourceX;
+            }
+        }
+        System.out.println(max);
+
+        int min = sourceNumbers[0]; // начальное значение МАКСИМАЛЬНОГО элемента
+        System.out.println("НАИМЕНЬШЕЕ число: ");
+        for (counter = 0; counter < sourceNumbers.length; counter++){
+            int sourceX = sourceNumbers[counter];
+            if(min > sourceX){
+                min = sourceX;
+            }
+        }
+        System.out.println(min + "\n");
+
+
 
 //        while (List = scanner.nextLine())
 
