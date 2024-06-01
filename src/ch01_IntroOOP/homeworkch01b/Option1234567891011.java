@@ -70,6 +70,30 @@ public class Option1234567891011 {
         }
         System.out.println(min + "\n");
 
+        //Числа, которые делятся на 3 или на 9.
+
+        int anyNumber;
+        System.out.println("Это число делится на 3 ИЛИ на 9: ");
+        for (counter = 0; counter < sourceNumbers.length; counter++){
+            int namber = sourceNumbers[counter];
+            if(namber%9 == 0 || namber%3 == 0){
+                anyNumber = namber;
+
+                System.out.print(anyNumber+ " ");
+            }
+        }
+        System.out.println("\n");
+        System.out.println("Это число делится на 5  И на 7: ");
+        for (counter = 0; counter < sourceNumbers.length; counter++){
+            int namber = sourceNumbers[counter];
+            if(namber%5 == 0 && namber%7 == 0){
+                anyNumber = namber;
+                System.out.println(anyNumber+ " ");
+            }
+        }
+        System.out.println("\n");
+
+
 
 
     }
