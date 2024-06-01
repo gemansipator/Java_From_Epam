@@ -6,7 +6,7 @@ package ch01_IntroOOP.homeworkch01b;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Option1 {
+public class Option1234567891011 {
     public static void main(String[] args){
 
         //Ввод в консоль n целых чисел:
@@ -71,8 +71,6 @@ public class Option1 {
         System.out.println(min + "\n");
 
 
-
-//        while (List = scanner.nextLine())
 
     }
 }
