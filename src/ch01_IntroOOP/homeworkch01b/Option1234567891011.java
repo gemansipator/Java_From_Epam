@@ -96,6 +96,24 @@ public class Option1234567891011 {
         //5. Все трехзначные числа, в десятичной записи которых нет одинаковых
         //цифр.
 
+        System.out.println("Эти числа ТРЕХЗНАЧНЫЕ и УНИКАЛЬНЫЕ : ");
+        int[] uniqueNumbers = sourceNumbers;
+        uniqueNumbers = Arrays.stream(uniqueNumbers)
+                .distinct().toArray();    //Удалить повторяющиеся элементы в массиве можно с помощью метода distinct():
+
+        System.out.println(Arrays.toString(uniqueNumbers));
+
+        for (counter = 0; counter < uniqueNumbers.length; counter++){
+            int namber = uniqueNumbers[counter];
+            if(namber > 99 && namber < 1000){
+
+                anyNumber = namber  ;
+                System.out.println(anyNumber+ " ");
+            }
+        }
+        System.out.println("\n");
+
+
         
 
 
