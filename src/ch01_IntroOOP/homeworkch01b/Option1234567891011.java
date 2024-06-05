@@ -6,8 +6,11 @@ package ch01_IntroOOP.homeworkch01b;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static ch01_IntroOOP.homeworkch01b.IsPrime.isPrime;
+import static ch01_IntroOOP.homeworkch01b.IsPrime2.isPrime2;
+
 public class Option1234567891011 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         //Ввод в консоль n целых чисел:
         Scanner scanner = new Scanner(System.in);
@@ -25,25 +28,25 @@ public class Option1234567891011 {
 
         //x % 2 - вычисляет остаток от деления x на 2.
         int counter;
-        int  evenNumbers;  //четные числа
+        int evenNumbers;  //четные числа
         int oddNumbers;   //нечетные числа
 
         System.out.println("Четные числа: ");
-        for (counter = 0; counter < sourceNumbers.length; counter++){
+        for (counter = 0; counter < sourceNumbers.length; counter++) {
             int namber = sourceNumbers[counter];
-            if(namber%2 == 0){
+            if (namber % 2 == 0) {
                 evenNumbers = namber;
 
-                System.out.print(" "+evenNumbers);
+                System.out.print(" " + evenNumbers);
             }
         }
         System.out.println();
         System.out.println("Нечетные числа: ");
-        for (counter = 0; counter < sourceNumbers.length; counter++){
+        for (counter = 0; counter < sourceNumbers.length; counter++) {
             int namber = sourceNumbers[counter];
-            if(namber%2 != 0){
+            if (namber % 2 != 0) {
                 oddNumbers = namber;
-                System.out.print(" "+oddNumbers);
+                System.out.print(" " + oddNumbers);
             }
         }
         System.out.println("\n");
@@ -52,9 +55,9 @@ public class Option1234567891011 {
 
         int max = sourceNumbers[0]; // начальное значение МАКСИМАЛЬНОГО элемента
         System.out.println("НАИБОЛЬШЕЕ число: ");
-        for (counter = 0; counter < sourceNumbers.length; counter++){
+        for (counter = 0; counter < sourceNumbers.length; counter++) {
             int sourceX = sourceNumbers[counter];
-            if(max < sourceX){
+            if (max < sourceX) {
                 max = sourceX;
             }
         }
@@ -62,9 +65,9 @@ public class Option1234567891011 {
 
         int min = sourceNumbers[0]; // начальное значение МАКСИМАЛЬНОГО элемента
         System.out.println("НАИМЕНЬШЕЕ число: ");
-        for (counter = 0; counter < sourceNumbers.length; counter++){
+        for (counter = 0; counter < sourceNumbers.length; counter++) {
             int sourceX = sourceNumbers[counter];
-            if(min > sourceX){
+            if (min > sourceX) {
                 min = sourceX;
             }
         }
@@ -74,21 +77,21 @@ public class Option1234567891011 {
 
         int anyNumber;
         System.out.println("Это число делится на 3 ИЛИ на 9: ");
-        for (counter = 0; counter < sourceNumbers.length; counter++){
+        for (counter = 0; counter < sourceNumbers.length; counter++) {
             int namber = sourceNumbers[counter];
-            if(namber%9 == 0 || namber%3 == 0){
+            if (namber % 9 == 0 || namber % 3 == 0) {
                 anyNumber = namber;
 
-                System.out.print(anyNumber+ " ");
+                System.out.print(anyNumber + " ");
             }
         }
         System.out.println("\n");
         System.out.println("Это число делится на 5  И на 7: ");
-        for (counter = 0; counter < sourceNumbers.length; counter++){
+        for (counter = 0; counter < sourceNumbers.length; counter++) {
             int namber = sourceNumbers[counter];
-            if(namber%5 == 0 && namber%7 == 0){
+            if (namber % 5 == 0 && namber % 7 == 0) {
                 anyNumber = namber;
-                System.out.println(anyNumber+ " ");
+                System.out.println(anyNumber + " ");
             }
         }
         System.out.println("\n");
@@ -103,21 +106,36 @@ public class Option1234567891011 {
 
         System.out.println(Arrays.toString(uniqueNumbers));
 
-        for (counter = 0; counter < uniqueNumbers.length; counter++){
+        for (counter = 0; counter < uniqueNumbers.length; counter++) {
             int namber = uniqueNumbers[counter];
-            if(namber > 99 && namber < 1000){
+            if (namber > 99 && namber < 1000) {
 
-                anyNumber = namber  ;
-                System.out.println(anyNumber+ " ");
+                anyNumber = namber;
+                System.out.println(anyNumber + " ");
             }
         }
         System.out.println("\n");
 
+        //ПРОСТЫЕ ЧИСЛА
 
-        
+        System.out.println("Простые числа. Вариант метода isPrime первый:");
+        for (int number : sourceNumbers) {
+            if (isPrime(number)) {
+                System.out.print(number + " ");
+            }
+        }
 
 
+        System.out.println("\n");
 
-
+        System.out.println("Простые числа. вариант метода isPrime второй:");
+        for (int number : sourceNumbers) {
+            if (isPrime2(number)) {
+                System.out.print(number + " ");
+            }
+        }
+        System.out.println("\n");
     }
+
+
 }
