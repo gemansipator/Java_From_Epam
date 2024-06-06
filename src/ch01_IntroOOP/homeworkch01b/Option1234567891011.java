@@ -177,7 +177,9 @@ public class Option1234567891011 {
         }
         System.out.println("\n");
         System.out.println("Ваш массив после сортировки по УБЫВАНИЯ: " + Arrays.toString(sourceNumbers));
-    }
 
+        System.out.println("\n");
+
+    }
 
 }
