@@ -135,6 +135,48 @@ public class Option1234567891011 {
             }
         }
         System.out.println("\n");
+
+
+        //7. Отсортированные числа в порядке возрастания и убывания.
+        System.out.println("Ваш массив: " + Arrays.toString(sourceNumbers));
+        System.out.println("\n Сортировка в порядке ВОЗРАСТЕНИЯ: ");
+        boolean isSort = true;
+        while (isSort){
+            isSort = false;
+            for (int i = 1; i < sourceNumbers.length; i++) {
+                if (sourceNumbers[i] < sourceNumbers[i - 1]) {
+                    int temp = sourceNumbers[i];       //сохраняем значение второго элемента
+                    sourceNumbers[i] = sourceNumbers[i - 1]; // В второй элемент записываем значение первого элемента
+                    sourceNumbers[i - 1] = temp;             // в первый элемент записываем значение второго элемента
+                    isSort = true;
+                    System.out.println(Arrays.toString(sourceNumbers));
+                }
+
+            }
+
+        }
+        System.out.println("\n");
+
+        System.out.println("Ваш массив после сортировки по ВОЗРАСТАНИЯ: " + Arrays.toString(sourceNumbers));
+
+        System.out.println("\n Сортировка в порядке УБЫВАНИЯ: ");
+        boolean isSort2 = true;
+        while (isSort2){
+            isSort2 = false;
+            for (int i = 1; i < sourceNumbers.length; i++) {
+                if (sourceNumbers[i] > sourceNumbers[i - 1]) {
+                    int temp = sourceNumbers[i-1];  //сохраняем значение первого элемента
+                    sourceNumbers[i - 1] = sourceNumbers[i]; // В первый элемент записываем значение второго элемента
+                    sourceNumbers[i] = temp;            // в второй элемент записываем сохраненное значение первого элемента
+                    isSort2 = true;
+                    System.out.println(Arrays.toString(sourceNumbers));
+                }
+
+            }
+
+        }
+        System.out.println("\n");
+        System.out.println("Ваш массив после сортировки по УБЫВАНИЯ: " + Arrays.toString(sourceNumbers));
     }
 
 
