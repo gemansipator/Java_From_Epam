@@ -3,9 +3,9 @@ package ch01_IntroOOP.homeworkch01b;
 Ввести с консоли n целых чисел. На консоль вывести:
 1. Четные и нечетные числа.*/
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
+import static ch01_IntroOOP.homeworkch01b.GetMaxNumber.getMaxNumber;
 import static ch01_IntroOOP.homeworkch01b.IsPrime.isPrime;
 import static ch01_IntroOOP.homeworkch01b.IsPrime2.isPrime2;
 
@@ -141,7 +141,7 @@ public class Option1234567891011 {
         System.out.println("Ваш массив: " + Arrays.toString(sourceNumbers));
         System.out.println("\n Сортировка в порядке ВОЗРАСТЕНИЯ: ");
         boolean isSort = true;
-        while (isSort){
+        while (isSort) {
             isSort = false;
             for (int i = 1; i < sourceNumbers.length; i++) {
                 if (sourceNumbers[i] < sourceNumbers[i - 1]) {
@@ -161,11 +161,11 @@ public class Option1234567891011 {
 
         System.out.println("\n Сортировка в порядке УБЫВАНИЯ: ");
         boolean isSort2 = true;
-        while (isSort2){
+        while (isSort2) {
             isSort2 = false;
             for (int i = 1; i < sourceNumbers.length; i++) {
                 if (sourceNumbers[i] > sourceNumbers[i - 1]) {
-                    int temp = sourceNumbers[i-1];  //сохраняем значение первого элемента
+                    int temp = sourceNumbers[i - 1];  //сохраняем значение первого элемента
                     sourceNumbers[i - 1] = sourceNumbers[i]; // В первый элемент записываем значение второго элемента
                     sourceNumbers[i] = temp;            // в второй элемент записываем сохраненное значение первого элемента
                     isSort2 = true;
@@ -180,6 +180,71 @@ public class Option1234567891011 {
 
         System.out.println("\n");
 
+
+        // 8. Числа в порядке убывания частоты встречаемости чисел.
+
+        // Определяем максимальное значение в исходном массиве для создания массива частоты
+        int maxNumber = getMaxNumber(sourceNumbers);
+        // Создаем массив для хранения частоты встречаемости чисел
+        int[] frequencyArray = new int[maxNumber + 1];
+
+        // Подсчитываем частоту встречаемости каждого числа в массиве
+        for (int number : sourceNumbers) {
+            frequencyArray[number]++;
+        }
+
+        // Создаем массив для хранения пар чисел и их частоты встречаемости
+        int[] numbers = new int[maxNumber + 1];
+        int[] frequencies = new int[maxNumber + 1];
+        int count = 0;
+
+        // Заполняем массивы записей из массива частоты
+        for (int i = 0; i < frequencyArray.length; i++) {
+            if (frequencyArray[i] != 0) {
+                numbers[count] = i;
+                frequencies[count] = frequencyArray[i];
+                count++;
+            }
+        }
+
+        // Сортируем массивы записей по убыванию частоты встречаемости (сортировка пузырьком)
+        for (int i = 0; i < count - 1; i++) {
+            for (int j = 0; j < count - i - 1; j++) {
+                // Сравниваем частоты встречаемости текущего и следующего чисел
+                if (frequencies[j] < frequencies[j + 1]) {
+                    // Если частота встречаемости текущего числа меньше,
+                    // чем у следующего числа, меняем их местами
+                    int tempNumber = numbers[j];
+                    int tempFrequency = frequencies[j];
+                    numbers[j] = numbers[j + 1];
+                    frequencies[j] = frequencies[j + 1];
+                    numbers[j + 1] = tempNumber;
+                    frequencies[j + 1] = tempFrequency;
+                }
+            }
+        }
+
+        // Выводим числа в порядке убывания частоты встречаемости
+        System.out.println("Числа в порядке убывания частоты встречаемости:");
+        for (int i = 0; i < count; i++) {
+            int number = numbers[i];
+            int frequency = frequencies[i];
+            // Печатаем каждое число столько раз, какова его частота встречаемости
+            for (int j = 0; j < frequency; j++) {
+                System.out.print(number + " ");
+            }
+        }
     }
 
+    // Метод для поиска максимального числа в массиве
+//    private static int getMaxNumber(int[] array) {
+//        int max = Integer.MIN_VALUE;
+//        // Проходим по массиву и находим максимальное число
+//        for (int number : array) {
+//            if (number > max) {
+//                max = number;
+//            }
+//        }
+//        return max;
+//    }
 }
