@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01a;
+package ch01IntroOOP.homeworkch01a;
 
 /*Вывести фамилию разработчика, дату и время получения задания, а также
 дату и время сдачи задания.*/

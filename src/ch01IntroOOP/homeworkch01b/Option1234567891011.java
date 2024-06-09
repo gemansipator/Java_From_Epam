@@ -1,15 +1,15 @@
-package ch01_IntroOOP.homeworkch01b;
+package ch01IntroOOP.homeworkch01b;
 /*Вариант B
 Ввести с консоли n целых чисел. На консоль вывести:
 1. Четные и нечетные числа.*/
 
 import java.util.*;
 
-import static ch01_IntroOOP.homeworkch01b.GetMaxNumber.getMaxNumber;
-import static ch01_IntroOOP.homeworkch01b.IsHappy.isHappy;
-import static ch01_IntroOOP.homeworkch01b.IsPalindrome.isPalindrome;
-import static ch01_IntroOOP.homeworkch01b.IsPrime.isPrime;
-import static ch01_IntroOOP.homeworkch01b.IsPrime2.isPrime2;
+import static ch01IntroOOP.homeworkch01b.GetMaxNumber.getMaxNumber;
+import static ch01IntroOOP.homeworkch01b.IsHappy.isHappy;
+import static ch01IntroOOP.homeworkch01b.IsPalindrome.isPalindrome;
+import static ch01IntroOOP.homeworkch01b.IsPrime.isPrime;
+import static ch01IntroOOP.homeworkch01b.IsPrime2.isPrime2;
 
 public class Option1234567891011 {
     public static void main(String[] args) {

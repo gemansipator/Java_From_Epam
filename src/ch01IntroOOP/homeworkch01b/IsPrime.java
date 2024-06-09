@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01b;
+package ch01IntroOOP.homeworkch01b;
 
 public class IsPrime {
     public static boolean isPrime(int number) { //Метод isPrime проверяет, является ли число простым.

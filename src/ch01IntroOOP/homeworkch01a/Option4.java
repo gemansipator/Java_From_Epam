@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01a;
+package ch01IntroOOP.homeworkch01a;
 /*Ввести пароль из командной строки и сравнить его со строкой-образцом.*/
 
 import java.util.Scanner;

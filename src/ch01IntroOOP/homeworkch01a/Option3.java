@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01a;
+package ch01IntroOOP.homeworkch01a;
 /*Вывести заданное количество случайных чисел с переходом и без перехода
 на новую строку.*/
 

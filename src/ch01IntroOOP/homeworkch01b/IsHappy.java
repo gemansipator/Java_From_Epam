@@ -1,6 +1,6 @@
-package ch01_IntroOOP.homeworkch01b;
+package ch01IntroOOP.homeworkch01b;
 
-import static ch01_IntroOOP.homeworkch01b.SumOfSquares.sumOfSquares; //импорт метода для вычисления суммы квадратов цифр числа
+import static ch01IntroOOP.homeworkch01b.SumOfSquares.sumOfSquares; //импорт метода для вычисления суммы квадратов цифр числа
 
 // Метод для проверки, является ли число счастливым
 

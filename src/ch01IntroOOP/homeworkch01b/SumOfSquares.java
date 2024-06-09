@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01b;
+package ch01IntroOOP.homeworkch01b;
 // Метод для вычисления суммы квадратов цифр числа
 public class SumOfSquares {
     public static int sumOfSquares(int number) {

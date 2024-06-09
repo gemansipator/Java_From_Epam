@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01b;
+package ch01IntroOOP.homeworkch01b;
 // Метод для поиска максимального числа в массиве
 public class GetMaxNumber {
     public static int getMaxNumber(int[] array) {

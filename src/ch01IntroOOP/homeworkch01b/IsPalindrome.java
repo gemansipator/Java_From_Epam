@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01b;
+package ch01IntroOOP.homeworkch01b;
 // в этом классе метод етод для проверки, является ли число палиндромом
 public class IsPalindrome {
     public static boolean isPalindrome(int number) {

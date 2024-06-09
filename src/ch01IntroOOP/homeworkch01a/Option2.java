@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01a;
+package ch01IntroOOP.homeworkch01a;
 /*Отобразить в окне консоли аргументы командной строки в обратном порядке.*/
 public class Option2 {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package ch01_IntroOOP.homeworkch01a;
+package ch01IntroOOP.homeworkch01a;
 /*
 Приветствовать любого пользователя при вводе его имени через командную строку.
 Страница 27

@@ -1,4 +1,4 @@
-package ch01_IntroOOP.consoleinputoutput;
+package ch01IntroOOP.consoleinputoutput;
 
 import java.util.Scanner;
 
