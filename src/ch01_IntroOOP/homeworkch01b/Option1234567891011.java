@@ -6,6 +6,7 @@ package ch01_IntroOOP.homeworkch01b;
 import java.util.*;
 
 import static ch01_IntroOOP.homeworkch01b.GetMaxNumber.getMaxNumber;
+import static ch01_IntroOOP.homeworkch01b.IsHappy.isHappy;
 import static ch01_IntroOOP.homeworkch01b.IsPrime.isPrime;
 import static ch01_IntroOOP.homeworkch01b.IsPrime2.isPrime2;
 
@@ -225,7 +226,7 @@ public class Option1234567891011 {
         }
 
         // Выводим числа в порядке убывания частоты встречаемости
-        System.out.println("Числа в порядке убывания частоты встречаемости:");
+        System.out.println("Числа в порядке убывания частоты встречаемости: ");
         for (int i = 0; i < count; i++) {
             int number = numbers[i];
             int frequency = frequencies[i];
@@ -234,17 +235,22 @@ public class Option1234567891011 {
                 System.out.print(number + " ");
             }
         }
+
+        System.out.println("\n");
+        // 9. «Счастливые» числа.
+
+        // Вывод счастливых чисел
+        System.out.println("Счастливые числа:");
+        for (int number : sourceNumbers) {
+            if (isHappy(number)) { // Проверяем, является ли текущее число счастливым
+                System.out.print(number + " "); // Если число счастливое, выводим его
+            }
+        }
+
+
+
+
     }
 
-    // Метод для поиска максимального числа в массиве
-//    private static int getMaxNumber(int[] array) {
-//        int max = Integer.MIN_VALUE;
-//        // Проходим по массиву и находим максимальное число
-//        for (int number : array) {
-//            if (number > max) {
-//                max = number;
-//            }
-//        }
-//        return max;
-//    }
+
 }
