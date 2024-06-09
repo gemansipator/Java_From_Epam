@@ -258,6 +258,14 @@ public class Option1234567891011 {
         }
         System.out.println("\n");
 
+        //11. Элементы, которые равны полусумме соседних элементов
+        System.out.println("Элементы, которые равны полусумме соседних элементов:");
+        for (int i = 1; i < sourceNumbers.length - 1; i++) {
+            // Проверяем, равен ли текущий элемент полусумме своих соседних элементов
+            if (sourceNumbers[i] == (sourceNumbers[i - 1] + sourceNumbers[i + 1]) / 2) {
+                System.out.println(sourceNumbers[i]); // Если да, выводим элемент на экран
+            }
+        }
 
     }
 
