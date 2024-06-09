@@ -7,6 +7,7 @@ import java.util.*;
 
 import static ch01_IntroOOP.homeworkch01b.GetMaxNumber.getMaxNumber;
 import static ch01_IntroOOP.homeworkch01b.IsHappy.isHappy;
+import static ch01_IntroOOP.homeworkch01b.IsPalindrome.isPalindrome;
 import static ch01_IntroOOP.homeworkch01b.IsPrime.isPrime;
 import static ch01_IntroOOP.homeworkch01b.IsPrime2.isPrime2;
 
@@ -246,8 +247,16 @@ public class Option1234567891011 {
                 System.out.print(number + " "); // Если число счастливое, выводим его
             }
         }
+        System.out.println("\n");
+        // 10. Числа-палиндромы, значения которых в прямом и обратном порядке совпадают.
 
-
+        System.out.println("Числа-палиндромы:");
+        for (int number : sourceNumbers) {
+            if (isPalindrome(number)) { // Проверяем, является ли текущее число палиндромом
+                System.out.print(number + " "); // Если число палиндром, выводим его
+            }
+        }
+        System.out.println("\n");
 
 
     }
