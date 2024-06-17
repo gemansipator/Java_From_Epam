@@ -3,7 +3,6 @@ package ch02DataTypesOperator.homeworkch01a;
 // 2 Упорядочить и вывести числа в порядке возрастания (убывания) значений
 //  их длины.
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Option2 {
@@ -20,54 +19,87 @@ public class Option2 {
         System.out.println("Ваш массив: " + Arrays.toString(sourceNumbers));
         System.out.println("\n");
 
-        // Преобразуем int[] в Integer[]
-        Integer[] numbersAscending = new Integer[size];
-        Integer[] numbersDescending = new Integer[size];
-        for (int i = 0; i < size; i++) {
-            numbersAscending[i] = sourceNumbers[i];
-            numbersDescending[i] = sourceNumbers[i];
+        // Копируем массив для сортировки по возрастанию и убыванию длины
+        int[] numbersAscending = Arrays.copyOf(sourceNumbers, size);  // Создаем копию исходного массива для сортировки по возрастанию
+        int[] numbersDescending = Arrays.copyOf(sourceNumbers, size);  // Создаем копию исходного массива для сортировки по убыванию
+
+        // Сортировка массива по возрастанию длины чисел (сортировка пузырьком)
+        for (int i = 0; i < numbersAscending.length - 1; i++) {
+            for (int j = 0; j < numbersAscending.length - 1 - i; j++) {
+                // Сравниваем длины чисел (в строковом представлении, чтобы не учитывать знак)
+                if (String.valueOf(Math.abs(numbersAscending[j])).length() > String.valueOf(Math.abs(numbersAscending[j + 1])).length()) {
+                    // Меняем элементы местами, если текущее число длиннее следующего
+                    int temp = numbersAscending[j];
+                    numbersAscending[j] = numbersAscending[j + 1];
+                    numbersAscending[j + 1] = temp;
+                }
+            }
         }
 
-        // Сортировка массива по возрастанию длины чисел
-        Arrays.sort(numbersAscending, Comparator.comparingInt(num -> String.valueOf(Math.abs(num)).length()));
-
-        // Сортировка массива по убыванию длины чисел
-        Arrays.sort(numbersDescending, (a, b) -> Integer.compare(String.valueOf(Math.abs(b)).length(), String.valueOf(Math.abs(a)).length()));
+        // Сортировка массива по убыванию длины чисел (сортировка пузырьком)
+        for (int i = 0; i < numbersDescending.length - 1; i++) {
+            for (int j = 0; j < numbersDescending.length - 1 - i; j++) {
+                // Сравниваем длины чисел (в строковом представлении, чтобы не учитывать знак)
+                if (String.valueOf(Math.abs(numbersDescending[j])).length() < String.valueOf(Math.abs(numbersDescending[j + 1])).length()) {
+                    // Меняем элементы местами, если текущее число короче следующего
+                    int temp = numbersDescending[j];
+                    numbersDescending[j] = numbersDescending[j + 1];
+                    numbersDescending[j + 1] = temp;
+                }
+            }
+        }
 
         // Вывод результатов
-        System.out.println("Числа в порядке возрастания длины: " + Arrays.toString(numbersAscending));
-        System.out.println("Числа в порядке убывания длины: " + Arrays.toString(numbersDescending));
+        System.out.println("Числа в порядке возрастания длины: " + Arrays.toString(numbersAscending));  // Выводим отсортированный по возрастанию длины массив
+        System.out.println("Числа в порядке убывания длины: " + Arrays.toString(numbersDescending));  // Выводим отсортированный по убыванию длины массив
     }
 }
 /*Пояснение шагов:
-Ввод данных:
+Импорт библиотек:
 
-Создаем объект Scanner для считывания ввода с консоли.
-Запрашиваем у пользователя количество чисел и сохраняем его в переменной size.
-Создаем массив sourceNumbers размером size.
-Запрашиваем у пользователя ввод чисел и заполняем массив sourceNumbers.
-Вывод массива:
+import java.util.Scanner;: Импортируем класс Scanner для ввода данных с консоли.
+import java.util.Arrays;: Импортируем класс Arrays для работы с массивами.
+Создание объекта Scanner и ввод данных:
 
-Выводим массив sourceNumbers на экран, чтобы пользователь видел, какие числа были введены.
-Копирование массивов:
+Scanner scanner = new Scanner(System.in);: Создаем объект Scanner для считывания ввода с консоли.
+System.out.print("Сколько целых чисел вы собираетесь ввести? ");: Запрашиваем у пользователя количество чисел.
+int size = scanner.nextInt();: Считываем количество чисел, которые пользователь собирается ввести.
+int[] sourceNumbers = new int[size];: Создаем массив sourceNumbers с размером, указанным пользователем.
+Заполнение массива введенными числами:
 
-Создаем копии массива sourceNumbers для сортировки по возрастанию (numbersAscending) и по убыванию (numbersDescending).
-Сортировка массивов:
+System.out.print("Введите целые числа через пробел и нажмите <Enter>: ");: Запрашиваем у пользователя ввод чисел.
+for (int i = 0; i < sourceNumbers.length; i++) { sourceNumbers[i] = scanner.nextInt(); }: Заполняем массив sourceNumbers
+ введенными числами.
+Вывод введенного массива:
 
-Вызываем метод sortByLength для сортировки массива numbersAscending по возрастанию длины чисел.
-Вызываем метод sortByLength для сортировки массива numbersDescending по убыванию длины чисел.
+System.out.println("Ваш массив: " + Arrays.toString(sourceNumbers));: Выводим массив на экран.
+Копирование массива для сортировки:
+
+int[] numbersAscending = Arrays.copyOf(sourceNumbers, size);: Создаем копию исходного массива для сортировки по
+ возрастанию.
+int[] numbersDescending = Arrays.copyOf(sourceNumbers, size);: Создаем копию исходного массива для сортировки по
+ убыванию.
+Сортировка по возрастанию длины чисел:
+
+for (int i = 0; i < numbersAscending.length - 1; i++) { for (int j = 0; j < numbersAscending.length - 1 - i; j++) { ... }
+}:
+Внешний и внутренний циклы для сортировки пузырьком.
+if (String.valueOf(Math.abs(numbersAscending[j])).length() > String.valueOf(Math.abs(numbersAscending[j + 1])).length())
+{ int temp = numbersAscending[j]; numbersAscending[j] = numbersAscending[j + 1]; numbersAscending[j + 1] = temp; }:
+Сравнение длины чисел и обмен значениями, если текущее число длиннее следующего.
+Сортировка по убыванию длины чисел:
+
+for (int i = 0; i < numbersDescending.length - 1; i++) { for (int j = 0; j < numbersDescending.length - 1 - i; j++)
+{ ... } }:
+Внешний и внутренний циклы для сортировки пузырьком.
+if (String.valueOf(Math.abs(numbersDescending[j])).length() < String.valueOf(Math.abs(numbersDescending[j + 1])).length())
+{ int temp = numbersDescending[j]; numbersDescending[j] = numbersDescending[j + 1]; numbersDescending[j + 1] = temp; }:
+Сравнение длины чисел и обмен значениями, если текущее число короче следующего.
 Вывод результатов:
 
-Выводим отсортированные массивы на экран: один массив, отсортированный по возрастанию длины чисел, другой — по убыванию
-длины чисел.
-Метод sortByLength:
-Описание: Метод сортирует массив по длине чисел.
-Параметры:
-array: массив для сортировки.
-ascending: если true, сортировка по возрастанию, если false — по убыванию.
-Алгоритм: Метод использует пузырьковую сортировку:
-Проходим по массиву, сравнивая длины текущего и следующего элементов.
-Если порядок неправильный (для возрастания или убывания), меняем элементы местами.
-Продолжаем, пока массив не будет отсортирован.
-Таким образом, мы реализуем сортировку чисел по длине их значений без использования потоков и компараторов, используя
- только циклы и массивы.*/
+System.out.println("Числа в порядке возрастания длины: " + Arrays.toString(numbersAscending));: Выводим отсортированный
+по возрастанию длины массив.
+System.out.println("Числа в порядке убывания длины: " + Arrays.toString(numbersDescending));: Выводим отсортированный по
+убыванию длины массив.
+Таким образом, этот код позволяет сортировать массив чисел по длине их значений с использованием циклов и массивов, без
+использования Comparator или других встроенных средств сортировки.*/
