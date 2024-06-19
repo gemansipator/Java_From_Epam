@@ -20,8 +20,10 @@ public class Option2 {
         System.out.println("\n");
 
         // Копируем массив для сортировки по возрастанию и убыванию длины
-        int[] numbersAscending = Arrays.copyOf(sourceNumbers, size);  // Создаем копию исходного массива для сортировки по возрастанию
-        int[] numbersDescending = Arrays.copyOf(sourceNumbers, size);  // Создаем копию исходного массива для сортировки по убыванию
+        int[] numbersAscending = Arrays.copyOf(sourceNumbers, size);  // Создаем копию исходного массива для сортировки
+        // по возрастанию
+        int[] numbersDescending = Arrays.copyOf(sourceNumbers, size);  // Создаем копию исходного массива для сортировки
+        // по убыванию
 
         // Сортировка массива по возрастанию длины чисел (сортировка пузырьком)
         for (int i = 0; i < numbersAscending.length - 1; i++) {
