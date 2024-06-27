@@ -46,7 +46,8 @@ public class Option6 {
             // Проходим по всем символам строки (цифрам числа)
             for (int i = 0; i < numberStr.length() - 1; i++) {
                 if (numberStr.charAt(i) >= numberStr.charAt(i + 1)) {
-                    isAscending = false; // Если текущая цифра не меньше следующей, устанавливаем флаг в false
+                    isAscending = false; // Если текущая цифра не меньше следующей,
+                    // устанавливаем флаг в false
                     break; // Прерываем цикл, так как порядок нарушен
                 }
             }
