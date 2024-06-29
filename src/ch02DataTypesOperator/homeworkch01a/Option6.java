@@ -31,9 +31,12 @@ public class Option6 {
         // Выводим массив, чтобы пользователь видел, какие числа он ввел
         System.out.println("Ваш массив: " + Arrays.toString(sourceNumbers));
 
-
-        // Инициализация переменной для хранения числа с цифрами в порядке возрастания:
+        // Переменная для хранения числа с цифрами в порядке возрастания
         int ascendingNumber = -1;
+
+        // Массив для хранения чисел, которые нужно вывести
+        int[] uniqueNumbers = new int[size];
+        int uniqueCount = 0; // Счетчик уникальных чисел
 
         // Проходим по всем числам в массиве
         for (int number : sourceNumbers) {
@@ -46,20 +49,39 @@ public class Option6 {
             // Проходим по всем символам строки (цифрам числа)
             for (int i = 0; i < numberStr.length() - 1; i++) {
                 if (numberStr.charAt(i) >= numberStr.charAt(i + 1)) {
-                    isAscending = false; // Если текущая цифра не меньше следующей,
-                    // устанавливаем флаг в false
+                    isAscending = false; // Если текущая цифра не меньше следующей, устанавливаем флаг в false
                     break; // Прерываем цикл, так как порядок нарушен
                 }
             }
 
+            // Проверяем, было ли уже число добавлено в массив уникальных чисел
+            boolean alreadyAdded = false;
+            for (int j = 0; j < uniqueCount; j++) {
+                if (uniqueNumbers[j] == number) {
+                    alreadyAdded = true;
+                    break;
+                }
+            }
+
+            // Если число не было добавлено ранее, добавляем его в массив уникальных чисел
+            if (!alreadyAdded) {
+                uniqueNumbers[uniqueCount++] = number;
+            }
+
             // Если нашли число с цифрами в порядке возрастания, сохраняем его и прекращаем поиск
-            if (isAscending) {
+            if (isAscending && ascendingNumber == -1) {
                 ascendingNumber = number;
-                break;
             }
         }
 
-        // Выводим результат
+        // Выводим числа, добавленные в массив уникальных чисел
+        System.out.print("Числа: ");
+        for (int i = 0; i < uniqueCount; i++) {
+            System.out.print(uniqueNumbers[i] + " ");
+        }
+        System.out.println();
+
+        // Выводим результат по числу с цифрами в порядке возрастания
         if (ascendingNumber != -1) {
             System.out.println("Число с цифрами в порядке возрастания: " + ascendingNumber);
         } else {
