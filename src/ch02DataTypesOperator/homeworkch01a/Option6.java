@@ -1,5 +1,5 @@
 package ch02DataTypesOperator.homeworkch01a;
-//6. Найти число, цифры в котором идут в строгом порядке возрастания. Если
+//6.  Найти число, цифры в котором идут в строгом порядке возрастания. Если
 //таких чисел несколько, найти первое из них.
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
