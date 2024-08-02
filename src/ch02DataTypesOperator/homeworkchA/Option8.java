@@ -1,4 +1,4 @@
-package ch02DataTypesOperator.homeworkch01a;
+package ch02DataTypesOperator.homeworkchA;
 //8.  Среди чисел найти число-палиндром. Если таких чисел больше одного,
 //найти второе.
 

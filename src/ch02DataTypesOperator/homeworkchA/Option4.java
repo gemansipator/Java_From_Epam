@@ -1,4 +1,4 @@
-package ch02DataTypesOperator.homeworkch01a;
+package ch02DataTypesOperator.homeworkchA;
 // 4. Найти число, в котором число различных цифр минимально. Если таких
 //чисел несколько, найти первое из них.
 

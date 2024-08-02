@@ -1,4 +1,4 @@
-package ch02DataTypesOperator.homeworkch01a;
+package ch02DataTypesOperator.homeworkchA;
 
 // 3 Вывести на консоль те числа, длина которых меньше (больше) средней,
 //а также длину

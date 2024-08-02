@@ -1,15 +1,13 @@
-package ch02DataTypesOperator.homeworkch01a;
-// 4. Найти число, в котором число различных цифр минимально. Если таких
-//чисел несколько, найти первое из них.
+package ch02DataTypesOperator.homeworkchA;
+//7.  Найти число, состоящее только из различных цифр. Если таких чисел несколько, найти первое из них
 
 import java.util.Arrays; // Для работы с массивами
 import java.util.Date; // Для работы с датой и временем
 import java.text.SimpleDateFormat; // Для форматирования даты и времени
 import java.util.Scanner; // Для считывания ввода с консоли
 
-public class Option4a {
+public class Option7 {
     public static void main(String[] args) {
-
         // Сохраняем текущую дату и время получения задания
         Date assignmentReceivedDate = new Date();
 
@@ -33,39 +31,41 @@ public class Option4a {
         // Выводим массив, чтобы пользователь видел, какие числа он ввел
         System.out.println("Ваш массив: " + Arrays.toString(sourceNumbers));
 
-        // Инициализируем переменные для хранения результата
-        int minUniqueDigitsCount = Integer.MAX_VALUE; // Минимальное количество различных цифр (начальное значение - максимально возможное)
-        int numberWithMinUniqueDigits = sourceNumbers[0]; // Число с минимальным количеством различных цифр (начальное значение - первый элемент массива)
+        // Переменная для хранения числа, состоящего только из различных цифр
+        int uniqueDigitNumber = -1;
 
         // Проходим по всем числам в массиве
         for (int number : sourceNumbers) {
             // Преобразуем число в строку и убираем знак, если он есть
             String numberStr = String.valueOf(Math.abs(number));
 
-            // Создаем массив для учета встреченных цифр (10 элементов, по одному на каждую цифру от 0 до 9)
+            // Массив для отслеживания цифр
             boolean[] digitsSeen = new boolean[10];
-            int uniqueDigitsCount = 0; // Счетчик уникальных цифр в текущем числе
+            boolean allUnique = true; // Предполагаем, что все цифры уникальны
 
-            // Проходим по всем символам строки (цифрам числа)
+            // Проверяем каждую цифру в числе
             for (char digitChar : numberStr.toCharArray()) {
-                int digit = digitChar - '0'; // Преобразуем символ в цифру (например, '3' -> 3)
-
-                // Если цифра еще не встречалась в текущем числе, учитываем ее
-                if (!digitsSeen[digit]) {
-                    digitsSeen[digit] = true; // Отмечаем цифру как встреченную
-                    uniqueDigitsCount++; // Увеличиваем счетчик уникальных цифр
+                int digit = digitChar - '0'; // Преобразуем символ в цифру
+                if (digitsSeen[digit]) {
+                    allUnique = false; // Если цифра уже встречалась, устанавливаем флаг в false
+                    break; // Прерываем цикл, так как нашли повторяющуюся цифру
                 }
+                digitsSeen[digit] = true; // Отмечаем цифру как встречавшуюся
             }
 
-            // Если текущее количество уникальных цифр меньше найденного минимального, обновляем значения
-            if (uniqueDigitsCount < minUniqueDigitsCount) {
-                minUniqueDigitsCount = uniqueDigitsCount; // Обновляем минимальное количество уникальных цифр
-                numberWithMinUniqueDigits = number; // Обновляем число с минимальным количеством уникальных цифр
+            // Если все цифры уникальны, сохраняем число и прекращаем поиск
+            if (allUnique) {
+                uniqueDigitNumber = number;
+                break;
             }
         }
 
-        // Выводим число с минимальным количеством различных цифр
-        System.out.println("Число с минимальным количеством различных цифр: " + numberWithMinUniqueDigits);
+        // Выводим результат
+        if (uniqueDigitNumber != -1) {
+            System.out.println("Число, состоящее только из различных цифр: " + uniqueDigitNumber);
+        } else {
+            System.out.println("Нет числа, состоящего только из различных цифр.");
+        }
 
         // Сохраняем текущую дату и время сдачи задания
         Date assignmentSubmittedDate = new Date();
@@ -77,3 +77,11 @@ public class Option4a {
         System.out.println("Дата и время сдачи задания: " + dateFormat.format(assignmentSubmittedDate));
     }
 }
+
+/*
+Для решения задачи по нахождению числа, состоящего только из различных цифр, и вывода первого из таких чисел, можно использовать следующий алгоритм:
+
+Пройти по каждому числу в массиве.
+Проверить, все ли цифры в числе уникальны.
+Если найдено такое число, сохранить его и прекратить дальнейший поиск.
+*/

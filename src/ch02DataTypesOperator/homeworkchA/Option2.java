@@ -1,4 +1,4 @@
-package ch02DataTypesOperator.homeworkch01a;
+package ch02DataTypesOperator.homeworkchA;
 
 // 2 Упорядочить и вывести числа в порядке возрастания (убывания) значений
 //  их длины.

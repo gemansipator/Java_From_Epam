@@ -1,4 +1,4 @@
-package ch02DataTypesOperator.homeworkch01a;
+package ch02DataTypesOperator.homeworkchA;
 // 9 Найти корни квадратного уравнения. Параметры уравнения передавать
 //с командной строкой.
 

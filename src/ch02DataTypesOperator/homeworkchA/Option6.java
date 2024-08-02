@@ -1,4 +1,4 @@
-package ch02DataTypesOperator.homeworkch01a;
+package ch02DataTypesOperator.homeworkchA;
 //6.  Найти число, цифры в котором идут в строгом порядке возрастания. Если
 //таких чисел несколько, найти первое из них.
 import java.text.SimpleDateFormat;

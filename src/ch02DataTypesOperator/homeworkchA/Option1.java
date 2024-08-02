@@ -1,4 +1,4 @@
-package ch02DataTypesOperator.homeworkch01a;
+package ch02DataTypesOperator.homeworkchA;
 // 1. Найти самое короткое и самое длинное число. Вывести найденные числа
 //        и их длину
 import java.util.Arrays;

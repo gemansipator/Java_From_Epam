@@ -1,4 +1,4 @@
-package ch02DataTypesOperator.homeworkch01a;
+package ch02DataTypesOperator.homeworkchA;
 //Найти количество чисел, содержащих только четные цифры, а среди них —
 //количество чисел с равным числом четных и нечетных цифр
 import java.text.SimpleDateFormat;
